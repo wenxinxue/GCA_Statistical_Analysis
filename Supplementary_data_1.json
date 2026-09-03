@@ -1,0 +1,2332 @@
+﻿{
+  "chapters": [
+    {
+      "id": "symptoms",
+      "name": "症状与现病史",
+      "questions": [
+        {
+          "id": "symptom.current.present",
+          "answer": {
+            "options": [
+              {
+                "id": "symptom.current.present.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "symptom.current.present.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "symptom.name",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "symptom.role",
+                          "answer": {
+                            "options": [
+                              {
+                                "id": "symptom.role.option.1",
+                                "value": "主要症状（主诉）",
+                                "questions": []
+                              },
+                              {
+                                "id": "symptom.role.option.2",
+                                "value": "伴随症状",
+                                "questions": []
+                              },
+                              {
+                                "id": "symptom.role.option.4",
+                                "value": "偶然提及",
+                                "questions": []
+                              }
+                            ]
+                          },
+                          "multiple": false,
+                          "question": "{symptom.name}在本次就诊中属于哪种症状角色？",
+                          "relations": [],
+                          "answerType": "fixed"
+                        },
+                        {
+                          "id": "symptom.onset",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{symptom.name}最早何时出现？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "symptom.location",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "{symptom.name}主要发生在哪些部位？",
+                          "relations": [
+                            {
+                              "id": "relation.symptom-location",
+                              "source": {
+                                "valueFrom": "context",
+                                "entityType": "symptom"
+                              },
+                              "target": {
+                                "valueFrom": "answer",
+                                "entityType": "body-part"
+                              },
+                              "relationType": "relation-type.34f8749618"
+                            }
+                          ],
+                          "answerType": "dynamic",
+                          "entityType": "body-part"
+                        },
+                        {
+                          "id": "symptom.character",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "{symptom.name}有哪些具体表现或性质？",
+                          "relations": [
+                            {
+                              "id": "relation.symptom.character.1",
+                              "source": {
+                                "valueFrom": "context",
+                                "entityType": "symptom"
+                              },
+                              "target": {
+                                "valueFrom": "answer",
+                                "entityType": "entity-type.73ed5fe758"
+                              },
+                              "relationType": "relation-type.43858ae0bc"
+                            }
+                          ],
+                          "answerType": "dynamic",
+                          "entityType": "entity-type.73ed5fe758"
+                        },
+                        {
+                          "id": "symptom.frequency",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{symptom.name}多久发作一次？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "symptom.episode-duration",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{symptom.name}每次发作通常持续多久？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "symptom.severity",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{symptom.name}最严重时达到什么程度？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "symptom.course.aggravation.present",
+                          "answer": {
+                            "options": [
+                              {
+                                "id": "symptom.course.aggravation.present.option.1",
+                                "value": "否",
+                                "questions": []
+                              },
+                              {
+                                "id": "symptom.course.aggravation.present.option.2",
+                                "value": "是",
+                                "questions": [
+                                  {
+                                    "id": "symptom.course.aggravation.time",
+                                    "answer": {
+                                      "questions": [
+                                        {
+                                          "id": "symptom.course.aggravation.factor",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": true,
+                                          "question": "{symptom.name}加重与哪些因素有关？",
+                                          "relations": [
+                                            {
+                                              "id": "relation.symptom.course.aggravation.factor.1",
+                                              "source": {
+                                                "valueFrom": "context",
+                                                "entityType": "symptom"
+                                              },
+                                              "target": {
+                                                "valueFrom": "answer",
+                                                "entityType": "entity-type.5799b24528"
+                                              },
+                                              "relationType": "relation-type.db0aa9e618"
+                                            }
+                                          ],
+                                          "answerType": "dynamic",
+                                          "entityType": "entity-type.5799b24528"
+                                        },
+                                        {
+                                          "id": "symptom.course.aggravation.character",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": true,
+                                          "question": "{symptom.name}加重后有什么特点",
+                                          "relations": [
+                                            {
+                                              "id": "relation.symptom.course.aggravation.character.1",
+                                              "source": {
+                                                "valueFrom": "context",
+                                                "entityType": "symptom"
+                                              },
+                                              "target": {
+                                                "valueFrom": "answer",
+                                                "entityType": "entity-type.73ed5fe758"
+                                              },
+                                              "relationType": "relation-type.43858ae0bc"
+                                            }
+                                          ],
+                                          "answerType": "dynamic",
+                                          "entityType": "entity-type.73ed5fe758"
+                                        },
+                                        {
+                                          "id": "symptom.course.aggravation.duration",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": false,
+                                          "question": "{symptom.name}加重后发作一次通常持续多久？",
+                                          "relations": [],
+                                          "answerType": "dynamic"
+                                        },
+                                        {
+                                          "id": "question.c4d66dc539",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": false,
+                                          "question": "{symptom.name}加重后多久发作一次",
+                                          "relations": [],
+                                          "answerType": "dynamic"
+                                        }
+                                      ]
+                                    },
+                                    "multiple": true,
+                                    "question": "{symptom.name}加重发生在什么时间？",
+                                    "relations": [],
+                                    "answerType": "dynamic"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "multiple": false,
+                          "question": "{symptom.name}是否有加重情况？",
+                          "relations": [],
+                          "answerType": "fixed"
+                        },
+                        {
+                          "id": "symptom.course.relief.present",
+                          "answer": {
+                            "options": [
+                              {
+                                "id": "symptom.course.relief.present.option.1",
+                                "value": "否",
+                                "questions": []
+                              },
+                              {
+                                "id": "symptom.course.relief.present.option.2",
+                                "value": "是",
+                                "questions": [
+                                  {
+                                    "id": "symptom.course.relief.time",
+                                    "answer": {
+                                      "questions": [
+                                        {
+                                          "id": "symptom.course.relief.factor",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": true,
+                                          "question": "{symptom.name}减轻与哪些因素有关？",
+                                          "relations": [
+                                            {
+                                              "id": "relation.symptom.course.relief.factor.1",
+                                              "source": {
+                                                "valueFrom": "context",
+                                                "entityType": "symptom"
+                                              },
+                                              "target": {
+                                                "valueFrom": "answer",
+                                                "entityType": "entity-type.5799b24528"
+                                              },
+                                              "relationType": "relation-type.681503be28"
+                                            }
+                                          ],
+                                          "answerType": "dynamic",
+                                          "entityType": "entity-type.5799b24528"
+                                        },
+                                        {
+                                          "id": "symptom.course.relief.character",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": true,
+                                          "question": "{symptom.name}减轻后有什么特点",
+                                          "relations": [
+                                            {
+                                              "id": "relation.symptom.course.relief.character.1",
+                                              "source": {
+                                                "valueFrom": "context",
+                                                "entityType": "symptom"
+                                              },
+                                              "target": {
+                                                "valueFrom": "answer",
+                                                "entityType": "entity-type.73ed5fe758"
+                                              },
+                                              "relationType": "relation-type.43858ae0bc"
+                                            }
+                                          ],
+                                          "answerType": "dynamic",
+                                          "entityType": "entity-type.73ed5fe758"
+                                        },
+                                        {
+                                          "id": "symptom.course.relief.duration",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": false,
+                                          "question": "{symptom.name}减轻后发作一次通常持续多久？",
+                                          "relations": [],
+                                          "answerType": "dynamic"
+                                        },
+                                        {
+                                          "id": "question.fbde120dbd",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": false,
+                                          "question": "{symptom.name}减轻后多久发作一次",
+                                          "relations": [],
+                                          "answerType": "dynamic"
+                                        }
+                                      ]
+                                    },
+                                    "multiple": true,
+                                    "question": "减轻发生在什么时间？",
+                                    "relations": [],
+                                    "answerType": "dynamic"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "multiple": false,
+                          "question": "{symptom.name}是否有减轻情况？",
+                          "relations": [],
+                          "answerType": "fixed"
+                        },
+                        {
+                          "id": "symptom.course.recurrence.present",
+                          "answer": {
+                            "options": [
+                              {
+                                "id": "symptom.course.recurrence.present.option.1",
+                                "value": "否",
+                                "questions": []
+                              },
+                              {
+                                "id": "symptom.course.recurrence.present.option.2",
+                                "value": "是",
+                                "questions": [
+                                  {
+                                    "id": "symptom.course.recurrence.time",
+                                    "answer": {
+                                      "questions": [
+                                        {
+                                          "id": "symptom.course.recurrence.factor",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": true,
+                                          "question": "{symptom.name}复发与哪些因素有关？",
+                                          "relations": [
+                                            {
+                                              "id": "relation.symptom.course.recurrence.factor.1",
+                                              "source": {
+                                                "entityId": "entity.9dd7750b68",
+                                                "valueFrom": "entity",
+                                                "entityType": "entity-type.0b4ce0cf4e"
+                                              },
+                                              "target": {
+                                                "valueFrom": "answer",
+                                                "entityType": "entity-type.5799b24528"
+                                              },
+                                              "relationType": "relation-type.e1af18d218"
+                                            }
+                                          ],
+                                          "answerType": "dynamic",
+                                          "entityType": "entity-type.5799b24528"
+                                        },
+                                        {
+                                          "id": "symptom.course.recurrence.character",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": true,
+                                          "question": "{symptom.name}复发后有什么特点",
+                                          "relations": [
+                                            {
+                                              "id": "relation.symptom.course.recurrence.character.1",
+                                              "source": {
+                                                "valueFrom": "context",
+                                                "entityType": "symptom"
+                                              },
+                                              "target": {
+                                                "valueFrom": "answer",
+                                                "entityType": "entity-type.73ed5fe758"
+                                              },
+                                              "relationType": "relation-type.43858ae0bc"
+                                            }
+                                          ],
+                                          "answerType": "dynamic",
+                                          "entityType": "entity-type.73ed5fe758"
+                                        },
+                                        {
+                                          "id": "symptom.course.recurrence.duration",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": false,
+                                          "question": "{symptom.name}复发后发作一次通常持续多久？",
+                                          "relations": [],
+                                          "answerType": "dynamic"
+                                        },
+                                        {
+                                          "id": "question.fb69fc1d78",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": false,
+                                          "question": "{symptom.name}复发后多久发作一次",
+                                          "relations": [],
+                                          "answerType": "dynamic"
+                                        }
+                                      ]
+                                    },
+                                    "multiple": true,
+                                    "question": "复发发生在什么时间？",
+                                    "relations": [],
+                                    "answerType": "dynamic"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          "multiple": false,
+                          "question": "{symptom.name}是否有复发情况？",
+                          "relations": [],
+                          "answerType": "fixed"
+                        },
+                        {
+                          "id": "treatment.name",
+                          "answer": {
+                            "questions": [
+                              {
+                                "id": "treatment.time",
+                                "answer": {
+                                  "questions": []
+                                },
+                                "multiple": false,
+                                "question": "针对{symptom.name}采用{treatment.name}的时间是什么？",
+                                "relations": [],
+                                "answerType": "dynamic"
+                              },
+                              {
+                                "id": "treatment.effect",
+                                "answer": {
+                                  "questions": []
+                                },
+                                "multiple": false,
+                                "question": "{treatment.name}对{symptom.name}的效果如何？",
+                                "relations": [],
+                                "answerType": "dynamic"
+                              },
+                              {
+                                "id": "treatment.adverse.present",
+                                "answer": {
+                                  "options": [
+                                    {
+                                      "id": "treatment.adverse.present.option.1",
+                                      "value": "否",
+                                      "questions": []
+                                    },
+                                    {
+                                      "id": "treatment.adverse.present.option.2",
+                                      "value": "是",
+                                      "questions": [
+                                        {
+                                          "id": "treatment.adverse.detail",
+                                          "answer": {
+                                            "questions": []
+                                          },
+                                          "multiple": true,
+                                          "question": "具体出现了什么不良反应？",
+                                          "relations": [],
+                                          "answerType": "dynamic"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                "multiple": false,
+                                "question": "使用{treatment.name}后是否出现不良反应？",
+                                "relations": [],
+                                "answerType": "fixed"
+                              }
+                            ]
+                          },
+                          "multiple": true,
+                          "question": "针对{symptom.name}采取过哪些处理措施？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "question.ab9ed7f948",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{symptom.name}的诱发因素有哪些？",
+                          "relations": [
+                            {
+                              "id": "relation.question.ab9ed7f948.1",
+                              "source": {
+                                "entityId": "entity.9dd7750b68",
+                                "valueFrom": "entity",
+                                "entityType": "entity-type.0b4ce0cf4e"
+                              },
+                              "target": {
+                                "valueFrom": "answer",
+                                "entityType": "entity-type.5799b24528"
+                              },
+                              "relationType": "relation-type.e1af18d218"
+                            }
+                          ],
+                          "answerType": "dynamic",
+                          "entityType": "entity-type.5799b24528"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "患者目前有哪些不适症状？",
+                    "relations": [
+                      {
+                        "id": "relation.symptom.name.1",
+                        "source": {
+                          "entityId": "entity.9dd7750b68",
+                          "valueFrom": "entity",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "target": {
+                          "valueFrom": "answer",
+                          "entityType": "symptom"
+                        },
+                        "relationType": "relation-type.3b6fe144f8"
+                      }
+                    ],
+                    "answerType": "dynamic",
+                    "entityType": "symptom"
+                  },
+                  {
+                    "id": "question.873b0d9dc8",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": true,
+                    "question": "患者明确否认了哪些不适症状",
+                    "relations": [
+                      {
+                        "id": "relation.question.873b0d9dc8.1",
+                        "source": {
+                          "entityId": "entity.9dd7750b68",
+                          "valueFrom": "entity",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "target": {
+                          "valueFrom": "answer",
+                          "entityType": "symptom"
+                        },
+                        "relationType": "relation-type.6ce28886d8"
+                      }
+                    ],
+                    "answerType": "dynamic",
+                    "entityType": "symptom"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "患者目前是否有不适？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "general",
+      "name": "一般情况",
+      "questions": [
+        {
+          "id": "general.appetite",
+          "answer": {
+            "options": [
+              {
+                "id": "general.appetite.option.1",
+                "value": "食欲好",
+                "questions": []
+              },
+              {
+                "id": "general.appetite.option.2",
+                "value": "食欲一般",
+                "questions": []
+              },
+              {
+                "id": "general.appetite.option.3",
+                "value": "食欲不振",
+                "questions": []
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "近期食欲怎么样？",
+          "relations": [
+            {
+              "id": "relation.general.appetite.1",
+              "source": {
+                "entityId": "entity.9dd7750b68",
+                "valueFrom": "entity",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "target": {
+                "valueFrom": "answer",
+                "entityType": "symptom"
+              },
+              "relationType": "relation-type.3b6fe144f8"
+            }
+          ],
+          "answerType": "fixed",
+          "entityType": "symptom"
+        },
+        {
+          "id": "general.energy",
+          "answer": {
+            "options": [
+              {
+                "id": "general.energy.option.1",
+                "value": "精神好",
+                "questions": []
+              },
+              {
+                "id": "general.energy.option.2",
+                "value": "精神一般",
+                "questions": []
+              },
+              {
+                "id": "general.energy.option.3",
+                "value": "精神不振",
+                "questions": []
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "近期精神和精力怎么样？",
+          "relations": [
+            {
+              "id": "relation.general.energy.1",
+              "source": {
+                "entityId": "entity.9dd7750b68",
+                "valueFrom": "entity",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "target": {
+                "valueFrom": "answer",
+                "entityType": "symptom"
+              },
+              "relationType": "relation-type.3b6fe144f8"
+            }
+          ],
+          "answerType": "fixed",
+          "entityType": "symptom"
+        },
+        {
+          "id": "general.sleep",
+          "answer": {
+            "options": [
+              {
+                "id": "general.sleep.option.1",
+                "value": "睡眠好",
+                "questions": []
+              },
+              {
+                "id": "general.sleep.option.2",
+                "value": "睡眠一般",
+                "questions": []
+              },
+              {
+                "id": "general.sleep.option.3",
+                "value": "睡眠差",
+                "questions": []
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "近期睡眠怎么样？",
+          "relations": [
+            {
+              "id": "relation.general.sleep.1",
+              "source": {
+                "entityId": "entity.9dd7750b68",
+                "valueFrom": "entity",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "target": {
+                "valueFrom": "answer",
+                "entityType": "symptom"
+              },
+              "relationType": "relation-type.3b6fe144f8"
+            }
+          ],
+          "answerType": "fixed",
+          "entityType": "symptom"
+        },
+        {
+          "id": "general.strength",
+          "answer": {
+            "options": [
+              {
+                "id": "general.strength.option.1",
+                "value": "体力好",
+                "questions": []
+              },
+              {
+                "id": "general.strength.option.2",
+                "value": "体力无明显变化",
+                "questions": []
+              },
+              {
+                "id": "general.strength.option.3",
+                "value": "体力下降",
+                "questions": []
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "近期体力怎么样？",
+          "relations": [
+            {
+              "id": "relation.general.strength.1",
+              "source": {
+                "entityId": "entity.9dd7750b68",
+                "valueFrom": "entity",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "target": {
+                "valueFrom": "answer",
+                "entityType": "symptom"
+              },
+              "relationType": "relation-type.3b6fe144f8"
+            }
+          ],
+          "answerType": "fixed"
+        },
+        {
+          "id": "general.weight-change",
+          "answer": {
+            "options": [
+              {
+                "id": "general.weight-change.option.1",
+                "value": "体重上升",
+                "questions": []
+              },
+              {
+                "id": "general.weight-change.option.2",
+                "value": "体重无明显变化",
+                "questions": []
+              },
+              {
+                "id": "general.weight-change.option.3",
+                "value": "体重下降",
+                "questions": []
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "近期体重有什么变化？",
+          "relations": [
+            {
+              "id": "relation.general.weight-change.1",
+              "source": {
+                "entityId": "entity.9dd7750b68",
+                "valueFrom": "entity",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "target": {
+                "valueFrom": "answer",
+                "entityType": "symptom"
+              },
+              "relationType": "relation-type.3b6fe144f8"
+            }
+          ],
+          "answerType": "fixed",
+          "entityType": "symptom"
+        },
+        {
+          "id": "question.1a02360fed",
+          "answer": {
+            "questions": []
+          },
+          "multiple": true,
+          "question": "患者的大便情况如何",
+          "relations": [
+            {
+              "id": "relation.question.1a02360fed.1",
+              "source": {
+                "entityId": "entity.9dd7750b68",
+                "valueFrom": "entity",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "target": {
+                "valueFrom": "answer",
+                "entityType": "symptom"
+              },
+              "relationType": "relation-type.3b6fe144f8"
+            }
+          ],
+          "answerType": "dynamic",
+          "entityType": "symptom"
+        },
+        {
+          "id": "question.1a023686dc",
+          "answer": {
+            "questions": []
+          },
+          "multiple": true,
+          "question": "患者小便状况如何？",
+          "relations": [
+            {
+              "id": "relation.question.1a023686dc.1",
+              "source": {
+                "entityId": "entity.9dd7750b68",
+                "valueFrom": "entity",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "target": {
+                "valueFrom": "answer",
+                "entityType": "symptom"
+              },
+              "relationType": "relation-type.3b6fe144f8"
+            }
+          ],
+          "answerType": "dynamic",
+          "entityType": "symptom"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "care",
+      "name": "本阶段诊疗经历",
+      "questions": [
+        {
+          "id": "care.external.present",
+          "answer": {
+            "options": [
+              {
+                "id": "care.external.present.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "care.external.present.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "care.external.institution",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "care.external.time",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "在{care.external.institution}诊疗的时间是什么？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "care.external.diagnosis",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "当时给出了什么诊断？",
+                          "relations": [],
+                          "answerType": "dynamic",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        {
+                          "id": "care.external.treatment",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "当时采取了哪些处理？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "care.external.outcome",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "诊疗后的效果如何？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "在哪些医疗机构诊疗过？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "本次就诊前是否在其他机构诊疗过？",
+          "relations": [],
+          "answerType": "fixed"
+        },
+        {
+          "id": "care.internal.present",
+          "answer": {
+            "options": [
+              {
+                "id": "care.internal.present.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "care.internal.present.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "question.d3333996c8",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": true,
+                    "question": "给出了什么诊断",
+                    "relations": [],
+                    "answerType": "dynamic",
+                    "entityType": "entity-type.0b4ce0cf4e"
+                  },
+                  {
+                    "id": "The treatment measures of this hospital",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": true,
+                    "question": "采取了哪些诊疗措施？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "question.8e53f27bc8",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": true,
+                    "question": "诊疗后的效果如何？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "question.20b14ad198",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": true,
+                    "question": "诊疗的时间？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "本次是否已经在本院接受诊疗？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "history-disease",
+      "name": "既往疾病史",
+      "questions": [
+        {
+          "id": "history.disease.present",
+          "answer": {
+            "options": [
+              {
+                "id": "history.disease.present.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "history.disease.present.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "history.disease.name",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "history.disease.onset",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{history.disease.name}最早何时发现？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "history.disease.treatment",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "{history.disease.name}接受过哪些治疗？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "history.disease.status",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "{history.disease.name}目前控制情况如何？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "既往患过哪些重要疾病？",
+                    "relations": [
+                      {
+                        "id": "relation.history.disease.name.1",
+                        "source": {
+                          "entityId": "entity.9dd7750b68",
+                          "valueFrom": "entity",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "target": {
+                          "valueFrom": "answer",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "relationType": "relation-type.c873c1448d"
+                      }
+                    ],
+                    "answerType": "dynamic",
+                    "entityType": "entity-type.0b4ce0cf4e"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "既往是否患有重要疾病？",
+          "relations": [
+            {
+              "id": "relation.history.disease.present.1",
+              "source": {
+                "entityId": "entity.9dd7750b68",
+                "valueFrom": "entity",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "target": {
+                "valueFrom": "answer",
+                "entityType": "symptom"
+              },
+              "relationType": "relation-type.c873c1448d"
+            }
+          ],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "procedure",
+      "name": "手术史",
+      "questions": [
+        {
+          "id": "history.procedure.present",
+          "answer": {
+            "options": [
+              {
+                "id": "history.procedure.present.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "history.procedure.present.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "history.procedure.name",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "history.procedure.time",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{history.procedure.name}是什么时候做的？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "history.procedure.reason",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "进行{history.procedure.name}的原因是什么？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "history.procedure.complication",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "术后是否出现并发症？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "做过哪些手术或操作？",
+                    "relations": [
+                      {
+                        "id": "relation.history.procedure.name.1",
+                        "source": {
+                          "entityId": "entity.9dd7750b68",
+                          "valueFrom": "entity",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "target": {
+                          "valueFrom": "answer",
+                          "entityType": "procedure"
+                        },
+                        "relationType": "relation-type.4c22f978a8"
+                      }
+                    ],
+                    "answerType": "dynamic",
+                    "entityType": "procedure"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "既往是否做过手术或操作？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "medication",
+      "name": "用药史",
+      "questions": [
+        {
+          "id": "medication.current.present",
+          "answer": {
+            "options": [
+              {
+                "id": "medication.current.present.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "medication.current.present.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "medication.name",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "medication.dose",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{medication.name}每次用量是多少？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "medication.frequency",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{medication.name}多久使用一次？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "medication.duration",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{medication.name}已经使用多久？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "medication.effect",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "使用{medication.name}后的效果如何？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "question.91f70af6b8",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{medication.name}被使用的原因？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "目前或近期使用了哪些药物？",
+                    "relations": [
+                      {
+                        "id": "relation.medication.name.1",
+                        "source": {
+                          "entityId": "entity.9dd7750b68",
+                          "valueFrom": "entity",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "target": {
+                          "valueFrom": "answer",
+                          "entityType": "entity-type.a540f81c88"
+                        },
+                        "relationType": "relation-type.e1af18d218"
+                      },
+                      {
+                        "id": "relation.medication.name.2",
+                        "source": {
+                          "entityId": "entity.9dd7750b68",
+                          "valueFrom": "entity",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "target": {
+                          "valueFrom": "answer",
+                          "entityType": "entity-type.a540f81c88"
+                        },
+                        "relationType": "relation-type.db0aa9e618"
+                      },
+                      {
+                        "id": "relation.medication.name.3",
+                        "source": {
+                          "entityId": "entity.9dd7750b68",
+                          "valueFrom": "entity",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "target": {
+                          "valueFrom": "answer",
+                          "entityType": "entity-type.a540f81c88"
+                        },
+                        "relationType": "relation-type.681503be28"
+                      }
+                    ],
+                    "answerType": "dynamic",
+                    "entityType": "entity-type.a540f81c88"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "目前或近期是否使用药物？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "allergy",
+      "name": "过敏史",
+      "questions": [
+        {
+          "id": "allergy.present",
+          "answer": {
+            "options": [
+              {
+                "id": "allergy.present.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "allergy.present.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "allergy.allergen",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "allergy.reaction",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "接触{allergy.allergen}后出现什么反应？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "allergy.time",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "最近一次过敏反应发生在什么时候？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "对哪些物质过敏？",
+                    "relations": [],
+                    "answerType": "dynamic",
+                    "entityType": "allergen"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "是否有明确过敏史？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "transfusion",
+      "name": "输血史",
+      "questions": [
+        {
+          "id": "transfusion.present",
+          "answer": {
+            "options": [
+              {
+                "id": "transfusion.present.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "transfusion.present.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "transfusion.time",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "transfusion.reason",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "当时为什么输血？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "transfusion.reaction",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "输血后是否出现不良反应？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "输血发生在什么时间？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "既往是否输过血？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "smoking",
+      "name": "吸烟史",
+      "questions": [
+        {
+          "id": "smoking.history",
+          "answer": {
+            "options": [
+              {
+                "id": "smoking.history.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "smoking.history.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "smoking.start-age",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": false,
+                    "question": "从多大年龄开始吸烟？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "smoking.amount",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": false,
+                    "question": "平均每天吸烟量是多少？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "smoking.duration",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": false,
+                    "question": "累计吸烟多久？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "smoking.current",
+                    "answer": {
+                      "options": [
+                        {
+                          "id": "smoking.current.option.1",
+                          "value": "是",
+                          "questions": []
+                        },
+                        {
+                          "id": "smoking.current.option.2",
+                          "value": "否",
+                          "questions": [
+                            {
+                              "id": "smoking.quit-duration",
+                              "answer": {
+                                "questions": []
+                              },
+                              "multiple": false,
+                              "question": "已经戒烟多久？",
+                              "relations": [],
+                              "answerType": "dynamic"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "multiple": false,
+                    "question": "目前是否仍在吸烟？",
+                    "relations": [],
+                    "answerType": "fixed"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "既往是否吸烟？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "alcohol",
+      "name": "饮酒史",
+      "questions": [
+        {
+          "id": "alcohol.history",
+          "answer": {
+            "options": [
+              {
+                "id": "alcohol.history.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "alcohol.history.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "alcohol.type",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": true,
+                    "question": "通常饮用哪些酒类？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "alcohol.amount",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": false,
+                    "question": "平均每次饮酒量是多少？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "alcohol.frequency",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": false,
+                    "question": "通常多久饮酒一次？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "alcohol.current",
+                    "answer": {
+                      "options": [
+                        {
+                          "id": "alcohol.current.option.1",
+                          "value": "是",
+                          "questions": []
+                        },
+                        {
+                          "id": "alcohol.current.option.2",
+                          "value": "否",
+                          "questions": [
+                            {
+                              "id": "alcohol.quit-duration",
+                              "answer": {
+                                "questions": []
+                              },
+                              "multiple": false,
+                              "question": "已经戒酒多久？",
+                              "relations": [],
+                              "answerType": "dynamic"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "multiple": false,
+                    "question": "目前是否仍在饮酒？",
+                    "relations": [],
+                    "answerType": "fixed"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "既往是否饮酒？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "exposure",
+      "name": "职业与环境暴露",
+      "questions": [
+        {
+          "id": "exposure.present",
+          "answer": {
+            "options": [
+              {
+                "id": "exposure.present.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "exposure.present.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "exposure.type",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "exposure.duration",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "接触{exposure.type}持续了多久？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "exposure.protection",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "接触时采取了哪些防护？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "接触过哪些有害因素？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "是否存在重要职业或环境暴露？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "family",
+      "name": "家族史",
+      "questions": [
+        {
+          "id": "family.disease.present",
+          "answer": {
+            "options": [
+              {
+                "id": "family.disease.present.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "family.disease.present.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "family.disease.name",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "family.disease.relative",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "哪些亲属患有{family.disease.name}？",
+                          "relations": [
+                            {
+                              "id": "relation.family.disease.relative.1",
+                              "source": {
+                                "valueFrom": "context",
+                                "entityType": "entity-type.0b4ce0cf4e"
+                              },
+                              "target": {
+                                "valueFrom": "answer",
+                                "entityType": "entity-type.d9b4ef1aa1"
+                              },
+                              "relationType": "relation-type.a88cc2c1cc"
+                            }
+                          ],
+                          "answerType": "dynamic",
+                          "entityType": "entity-type.d9b4ef1aa1"
+                        },
+                        {
+                          "id": "family.disease.age",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "亲属大约在什么年龄发病？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "家族中有哪些重要疾病？",
+                    "relations": [
+                      {
+                        "id": "relation.family.disease.name.1",
+                        "source": {
+                          "entityId": "entity.9dd7750b68",
+                          "valueFrom": "entity",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "target": {
+                          "valueFrom": "answer",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "relationType": "relation-type.a1ab80c0d9"
+                      }
+                    ],
+                    "answerType": "dynamic",
+                    "entityType": "entity-type.0b4ce0cf4e"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "家族中是否有重要疾病？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "marital",
+      "name": "婚姻与配偶",
+      "questions": [
+        {
+          "id": "marital.status",
+          "answer": {
+            "options": [
+              {
+                "id": "marital.status.option.1",
+                "value": "未婚",
+                "questions": []
+              },
+              {
+                "id": "marital.status.option.2",
+                "value": "已婚",
+                "questions": []
+              },
+              {
+                "id": "marital.status.option.3",
+                "value": "离异",
+                "questions": []
+              },
+              {
+                "id": "marital.status.option.4",
+                "value": "丧偶",
+                "questions": []
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "目前婚姻状况如何？",
+          "relations": [],
+          "answerType": "fixed"
+        },
+        {
+          "id": "marital.partner-health",
+          "answer": {
+            "questions": []
+          },
+          "multiple": false,
+          "question": "配偶健康状况如何？",
+          "relations": [],
+          "answerType": "dynamic"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "travel",
+      "name": "旅行与居住地变化",
+      "questions": [
+        {
+          "id": "travel.present",
+          "answer": {
+            "options": [
+              {
+                "id": "travel.present.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "travel.present.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "travel.location",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "travel.time",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "在{travel.location}停留的时间是什么？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "travel.exposure",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "在{travel.location}是否有特殊接触或暴露？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "去过或居住过哪些地点？",
+                    "relations": [
+                      {
+                        "id": "relation.travel.location.1",
+                        "source": {
+                          "entityId": "entity.9dd7750b68",
+                          "valueFrom": "entity",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "target": {
+                          "valueFrom": "answer",
+                          "entityType": "entity-type.a9f29a1d48"
+                        },
+                        "relationType": "relation-type.4c22f978a8"
+                      }
+                    ],
+                    "answerType": "dynamic",
+                    "entityType": "entity-type.a9f29a1d48"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "近期是否有旅行或居住地变化？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "reproductive",
+      "name": "月经与孕产史",
+      "questions": [
+        {
+          "id": "reproductive.applicable",
+          "answer": {
+            "options": [
+              {
+                "id": "reproductive.applicable.option.1",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "reproductive.applicable.option.2",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "menstrual.menarche-age",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": false,
+                    "question": "初潮年龄是多少？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "menstrual.cycle",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": true,
+                    "question": "月经周期通常是多少天？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "menstrual.duration",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": true,
+                    "question": "每次月经通常持续多久？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "menstrual.last-period",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": false,
+                    "question": "末次月经是什么时间？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "pregnancy.count",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": false,
+                    "question": "既往怀孕多少次？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  },
+                  {
+                    "id": "delivery.count",
+                    "answer": {
+                      "questions": []
+                    },
+                    "multiple": false,
+                    "question": "既往分娩多少次？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "是否需要采集月经与孕产史？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "chapter.f9823b1788",
+      "name": "感染史",
+      "questions": [
+        {
+          "id": "question.d4ea29e328",
+          "answer": {
+            "options": [
+              {
+                "id": "question.d4ea29e328.option.2",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "question.d4ea29e328.option.1",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "infectious diseases",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "question.bd3faf2c98",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{infectious diseases}最早是什么时候发现的？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "question.b25aa0f3e8",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "{infectious diseases}接受了什么治疗？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "question.1cd338a1e8",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "{infectious diseases}控制的怎么样？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "有哪些感染性疾病？",
+                    "relations": [
+                      {
+                        "id": "relation.infectious diseases.1",
+                        "source": {
+                          "entityId": "entity.9dd7750b68",
+                          "valueFrom": "entity",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "target": {
+                          "valueFrom": "answer",
+                          "entityType": "entity-type.325e71f917"
+                        },
+                        "relationType": "relation-type.4c22f978a8"
+                      }
+                    ],
+                    "answerType": "dynamic",
+                    "entityType": "entity-type.325e71f917"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "既往患是否曾患感染性疾病？",
+          "relations": [
+            {
+              "id": "relation.question.d4ea29e328.1",
+              "source": {
+                "entityId": "entity.9dd7750b68",
+                "valueFrom": "entity",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "target": {
+                "valueFrom": "answer",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "relationType": "relation-type.c873c1448d"
+            }
+          ],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "chapter.895aba7a48",
+      "name": "外伤史",
+      "questions": [
+        {
+          "id": "question.deff81e168",
+          "answer": {
+            "options": [
+              {
+                "id": "question.deff81e168.option.2",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "question.deff81e168.option.1",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "rtauma history",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "question.c9c4cc3ef1",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{rtauma history}发生的时间？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "question.6a80370646",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "{rtauma history}的处理措施？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "question.6b45b79c52",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": true,
+                          "question": "{rtauma history}的控制效果？",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "外伤具体是什么？",
+                    "relations": [
+                      {
+                        "id": "relation.rtauma history.1",
+                        "source": {
+                          "entityId": "entity.9dd7750b68",
+                          "valueFrom": "entity",
+                          "entityType": "entity-type.0b4ce0cf4e"
+                        },
+                        "target": {
+                          "valueFrom": "answer",
+                          "entityType": "entity-type.998b58e2a8"
+                        },
+                        "relationType": "relation-type.4c22f978a8"
+                      }
+                    ],
+                    "answerType": "dynamic",
+                    "entityType": "entity-type.998b58e2a8"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "是否经历过外伤？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "chapter.7df0f65ec8",
+      "name": "预防接种史",
+      "questions": [
+        {
+          "id": "question.94ddf13148",
+          "answer": {
+            "options": [
+              {
+                "id": "question.94ddf13148.option.2",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "question.94ddf13148.option.1",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "vaccination",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "question.dba09c2a78",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "{vaccination}接种的时间",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "接种了哪些疫苗？",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "是否接种过疫苗？",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "chapter.1a066421de",
+      "name": "出血史",
+      "questions": [
+        {
+          "id": "question.1a0664242d",
+          "answer": {
+            "options": [
+              {
+                "id": "question.1a0664242d.option.2",
+                "value": "否",
+                "questions": []
+              },
+              {
+                "id": "question.1a0664242d.option.1",
+                "value": "是",
+                "questions": [
+                  {
+                    "id": "question.1a066427d3",
+                    "answer": {
+                      "questions": [
+                        {
+                          "id": "question.1a06642e7a",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "出血发生的原因",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        },
+                        {
+                          "id": "question.1a066434bf",
+                          "answer": {
+                            "questions": []
+                          },
+                          "multiple": false,
+                          "question": "出血发生的具体情况",
+                          "relations": [],
+                          "answerType": "dynamic"
+                        }
+                      ]
+                    },
+                    "multiple": true,
+                    "question": "出血发生的时间",
+                    "relations": [],
+                    "answerType": "dynamic"
+                  }
+                ]
+              }
+            ]
+          },
+          "multiple": false,
+          "question": "是否有出血史",
+          "relations": [],
+          "answerType": "fixed"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    },
+    {
+      "id": "chapter.1a06643ad2",
+      "name": "饮食生活",
+      "questions": [
+        {
+          "id": "question.1a06643df7",
+          "answer": {
+            "questions": []
+          },
+          "multiple": true,
+          "question": "饮食情况如何",
+          "relations": [
+            {
+              "id": "relation.question.1a06643df7.1",
+              "source": {
+                "entityId": "entity.9dd7750b68",
+                "valueFrom": "entity",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "target": {
+                "valueFrom": "answer",
+                "entityType": "symptom"
+              },
+              "relationType": "relation-type.3b6fe144f8"
+            }
+          ],
+          "answerType": "dynamic",
+          "entityType": "symptom"
+        },
+        {
+          "id": "question.1a06644982",
+          "answer": {
+            "questions": []
+          },
+          "multiple": true,
+          "question": "睡眠习惯如何",
+          "relations": [
+            {
+              "id": "relation.question.1a06644982.1",
+              "source": {
+                "entityId": "entity.9dd7750b68",
+                "valueFrom": "entity",
+                "entityType": "entity-type.0b4ce0cf4e"
+              },
+              "target": {
+                "valueFrom": "answer",
+                "entityType": "symptom"
+              },
+              "relationType": "relation-type.3b6fe144f8"
+            }
+          ],
+          "answerType": "dynamic",
+          "entityType": "symptom"
+        }
+      ],
+      "departmentId": "department.gastroenterology"
+    }
+  ],
+  "resourceType": "MedicalQuestionnaire",
+  "questionnaire": {
+    "id": "medical-intake",
+    "name": "医生问诊问卷",
+    "version": "1.0.3"
+  },
+  "schemaVersion": "1.0.0"
+}
