@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.tmp
+~$*
+
+# Never commit controlled participant-level data or generated derivatives.
+data/
+private_data/
+controlled_data/
+outputs/
+qa/
